@@ -12,6 +12,10 @@ public class FetchData {
     public static void main(String[] args) throws IOException {
         Iterator<Object[]> itr = ExcelFileReader.getExcelData();
         findAllData("BE");
+        findAllData("MTECh");
+        findAllData("Resma");
+        findAllData("P_Frist name3");
+
     }
 
     public static void findAllData(String input) throws IOException {
