@@ -13,41 +13,6 @@ import java.util.*;
 import static java.util.Arrays.*;
 
 public class ExcelFileReader {
-    static String machingData = null;
-
-    public static void main(String[] args) throws IOException {
-        Iterator<Object[]> itr = getExcelData();
-        findAllData("BE");
-    }
-
-    public static void findAllData(String input) throws IOException {
-        ArrayList<String> arrayList = new ArrayList<String>();
-        Iterator<Object[]> itr = getExcelData();
-        ArrayList<Object[]> arrOne = excelData();
-        while (itr.hasNext()) {
-            Object[] arraydata = itr.next();
-            String[] stringArray = copyOf(arraydata, arraydata.length, String[].class);
-            for (int i = 0; i < stringArray.length; i++) {
-                if (stringArray[i].equalsIgnoreCase(input)) {
-                    machingData = stringArray[0];
-                    break;
-                }
-            }
-        }
-        //arrayList.add(0,machingData);
-        for (int i = 0; i < arrOne.size(); i++) {
-            Object[] arraydata = arrOne.get(i);
-            String[] stringArray = copyOf(arraydata, arraydata.length, String[].class);
-            if (stringArray[0].equals(machingData)) {
-                for (int j = 1; j < stringArray.length; j++) {
-                    arrayList.add(stringArray[j]);
-
-                }
-            }
-
-        }
-        System.out.println(arrayList);
-    }
 
     public static Iterator<Object[]> getExcelData() throws IOException {
         ArrayList<Object[]> al = excelData();
@@ -55,9 +20,7 @@ public class ExcelFileReader {
     }
 
     public static ArrayList<Object[]> excelData() throws IOException {
-
-        // String path = System.getProperty("user.dir"+"/APITestng/TestDataFile.xlsx");
-        String path = "/Users/vsingh/Documents/AutomationCode/newCyrusjava/DataFetcher/src/main/resources/Emp.xlsx";
+        String path = "src/main/resources/Emp.xlsx";
         Map<String, ArrayList<Object[]>> empDetails = new HashMap<String, ArrayList<Object[]>>();
         FileInputStream fis = new FileInputStream(path);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
@@ -125,7 +88,6 @@ public class ExcelFileReader {
                 }
             }
         }
-        // empDetails.put("EmpData", al);
         return al;
     }
 }
