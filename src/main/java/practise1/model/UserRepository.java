@@ -1,6 +1,5 @@
-package Probleams;
+package practise1.model;
 
-import pojo.User;
 
 import java.util.*;
 
