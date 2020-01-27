@@ -1,4 +1,4 @@
-package Probleams;
+/* package Probleams;
 
 import pojo.User;
 
@@ -7,15 +7,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SetUserDetails {
-    User user = new User();
-    GetUserDetails getUserDetails = new GetUserDetails();
+    User user = new User("Vishal");
+    UserRepository userRepository = new UserRepository();
     ArrayList<String> phoneNumber = new ArrayList<String>();
     Map<String, String> mapInput = new HashMap<String, String>();
     Map<String, ArrayList> phone = new HashMap<String, ArrayList>();
 
     public void setDataForUser() {
         phone.put("phone", phoneNumber);
-
         mapInput.put("fristName", "Jek");
         mapInput.put("lastName", "Ding");
         mapInput.put("address", "H.NO 102 , 2nd crossh , Landon ");
@@ -23,11 +22,12 @@ public class SetUserDetails {
         phoneNumber.add("0812300001");
         phoneNumber.add("0812300002");
 
-        user.setFristName(mapInput.get("fristName"));
+       // user.setFristName(mapInput.get("fristName"));
         user.setLastName(mapInput.get("lastName"));
         user.setAddress(mapInput.get("address"));
         user.setPhone(phone.get("phone"));
-        getUserDetails.addUser("1", user);
+        userRepository.addUser(user);
     }
 
 }
+*/

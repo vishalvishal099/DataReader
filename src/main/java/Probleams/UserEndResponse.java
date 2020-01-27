@@ -2,14 +2,32 @@ package Probleams;
 
 import pojo.User;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
+
 
 public class UserEndResponse {
     public static void main(String[] args) {
-        GetUserDetails getUserDetails = new GetUserDetails();
-        SetUserDetails setUserDetails = new SetUserDetails();
-        setUserDetails.setDataForUser();
-        User user = getUserDetails.printUser("1");
-        System.out.println(user.getFristName()+"  " + user.getLastName()+ "   " +user.getAddress()+"    "+user.getPhone());
+        User user = null;
+        UserRepository getUserDetails = new UserRepository();
+        ArrayList<String> phoneNumber = new ArrayList<String>();
+        Map<String, String> mapInput = new HashMap<String, String>();
+        Map<String, ArrayList> phone = new HashMap<String, ArrayList>();
+        phoneNumber.add("0812300000");
+        phoneNumber.add("0812300001");
+        phoneNumber.add("0812300002");
+
+        mapInput.put("fristName", "Jek");
+        mapInput.put("lastName", "Ding");
+        mapInput.put("address", "H.NO 102 , 2nd crossh , Landon ");
+        phone.put("phone", phoneNumber);
+        user = new User("vishal");
+        user.setLastName(mapInput.get("lastName"));
+        user.setAddress(mapInput.get("address"));
+        user.setPhone(phone.get("phone"));
+        UserRepository.addUser(user);
+        user = UserRepository.findUserByName("Vishal");
+        System.out.println(user.getFristName() + "  " + user.getLastName() + "   " + user.getAddress() + "    " + user.getPhone());
     }
 }

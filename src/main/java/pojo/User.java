@@ -6,15 +6,19 @@ public class User {
     String fristName;
     String lastName;
     String address;
-    ArrayList <String> phone;
+    ArrayList<String> phone;
+
+    public User(String name) {
+        fristName = name;
+    }
 
     public String getFristName() {
         return fristName;
     }
 
-    public void setFristName(String fristName) {
-        this.fristName = fristName;
-    }
+//    public void setFristName(String fristName) {
+//        this.fristName = fristName;
+//    }
 
     public String getLastName() {
         return lastName;
@@ -36,7 +40,7 @@ public class User {
         return phone;
     }
 
-    public void setPhone( ArrayList<String> phone) {
+    public void setPhone(ArrayList<String> phone) {
         this.phone = phone;
     }
 }
