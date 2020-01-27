@@ -3,10 +3,10 @@ package practise1.model;
 import java.util.ArrayList;
 
 public class User {
-    String fristName;
-    String lastName;
-    String address;
-    ArrayList<String> phone;
+    private String fristName;
+    private String lastName;
+    private String address;
+    private ArrayList<String> phone;
 
     public User(String name) {
         fristName = name;

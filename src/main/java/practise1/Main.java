@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        User user = new User("vishal");
+        User user = new User("Vishal");
         user.setLastName("Jek");
         user.setAddress("H.NO 102 , 2nd crossh , Landon ");
         List<String> phoneNumbers = Arrays.asList("0812300000", "0812300001", "0812300002");

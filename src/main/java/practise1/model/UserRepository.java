@@ -2,6 +2,7 @@ package practise1.model;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserRepository {
 
@@ -14,17 +15,12 @@ public class UserRepository {
             userListSet.add(user);
     }
 
-    public static User findUserByName(String name) {
-        User findUser = null;
-        Iterator<User> itr = userListSet.iterator();
-        while (itr.hasNext()) {
-            findUser = itr.next();
-            if (findUser.getFristName() == name) {
-                return findUser;
-            }
-
-        }
-        return findUser;
+    public static User findUserByName(final String name) {
+       return userListSet
+               .stream()
+               .filter(u -> u.getFristName().equals(name))
+               .findFirst()
+               .orElse(null);
     }
 }
 
