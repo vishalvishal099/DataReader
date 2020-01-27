@@ -39,7 +39,6 @@ public class User {
     public ArrayList<String> getPhone() {
         return phone;
     }
-
     public void setPhone(ArrayList<String> phone) {
         this.phone = phone;
     }

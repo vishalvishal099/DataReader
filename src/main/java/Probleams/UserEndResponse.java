@@ -12,11 +12,19 @@ public class UserEndResponse {
         User user = null;
         UserRepository getUserDetails = new UserRepository();
         ArrayList<String> phoneNumber = new ArrayList<String>();
+        PhoneNumHandler phoneN = new PhoneNumHandler();
         Map<String, String> mapInput = new HashMap<String, String>();
         Map<String, ArrayList> phone = new HashMap<String, ArrayList>();
-        phoneNumber.add("0812300000");
-        phoneNumber.add("0812300001");
-        phoneNumber.add("0812300002");
+        phoneNumber= phoneN.addNumber("8123758353");
+        phoneNumber =phoneN.addNumber("91919191919");
+
+        //phoneNumber =phoneN.addNumber("91919191919");
+
+        phoneNumber =phoneN.addNumber("91919191918");
+        phoneNumber =phoneN.addNumber("91919191917");
+        phoneNumber =phoneN.addNumber("91919191916");
+       // phoneNumber =phoneN.addNumber("91919191915");
+
 
         mapInput.put("fristName", "Jek");
         mapInput.put("lastName", "Ding");
